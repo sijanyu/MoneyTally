@@ -21,6 +21,8 @@ class SavingsDialog(
         setCanceledOnTouchOutside(false)
 
         val dialogClose: ImageView = findViewById(R.id.dialogCloseImageView)
+
+        //change this to edittext
         val addAmountTextBox: TextView = findViewById(R.id.addAmountTextBox)
         val addAmountButton: AppCompatButton = findViewById(R.id.addAmountButton)
 
@@ -29,7 +31,9 @@ class SavingsDialog(
         }
 
         addAmountButton.setOnClickListener {
+            // Add some error handling here
             listener?.onAddAmount(addAmountTextBox.text.toString())
+            dismiss()
         }
     }
 }
