@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.yu.moneytally.databinding.FragmentSavingsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +22,9 @@ class SavingsFragment() : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var savingsBinding: FragmentSavingsBinding? = null
+    private val binding get() = savingsBinding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +37,20 @@ class SavingsFragment() : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_savings, container, false)
+        savingsBinding = FragmentSavingsBinding.inflate(inflater, container, false)
+        return savingsBinding!!.root
+    }
+
+    fun setAmountBank(){
+        savingsBinding?.bankAmountTextBox?.setOnClickListener {
+            
+        }
+    }
+
+    fun setAmountWallet(){
+        savingsBinding?.walletAmountTextBox?.setOnClickListener {
+
+        }
     }
 
     companion object {

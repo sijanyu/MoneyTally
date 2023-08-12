@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/titleSavingsTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="90dp"
@@ -42,7 +42,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/titleBankTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -53,10 +53,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/titleWalletTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_weight="1"
                     android:text="Amount in Wallet"
                     android:textSize="16sp"
@@ -72,7 +72,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/bankAmountTextBox"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,22 +81,36 @@
                     android:drawableTint="#000000"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    app:drawableEndCompat="@android:drawable/ic_input_add" />
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/addAmountBankImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/ic_input_add" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/walletAmountTextBox"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@android:drawable/editbox_background"
                     android:backgroundTint="#BFE6A3"
                     android:drawableTint="#000000"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    app:drawableEndCompat="@android:drawable/ic_input_add" />
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/addAmountWalletImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/ic_input_add" />
 
             </LinearLayout>
 
