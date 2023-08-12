@@ -44,6 +44,7 @@
         android:layout_weight="1"
         android:background="@android:drawable/editbox_background"
         android:backgroundTint="#BFE6A3"
+        android:clickable="true"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
