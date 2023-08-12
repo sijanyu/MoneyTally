@@ -14,7 +14,8 @@ class SavingsFragment() : Fragment(), OnAddButtonListener {
 
     private var savingsBinding: FragmentSavingsBinding? = null
     private val binding get() = savingsBinding!!
-    private var savingsDialog: SavingsDialog? = null
+    private var savingsBankDialog: SavingsBankDialog? = null
+    private var savingsWalletDialog: SavingsWalletDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +33,8 @@ class SavingsFragment() : Fragment(), OnAddButtonListener {
 
     private fun setAmountBank(){
         savingsBinding?.addAmountBankImageView?.setOnClickListener {
-         savingsDialog = activity?.let { it1 ->
-             SavingsDialog(it1, this).apply {
+         savingsBankDialog = activity?.let { it1 ->
+             SavingsBankDialog(it1, this).apply {
                  show()
              }
          }
@@ -42,7 +43,11 @@ class SavingsFragment() : Fragment(), OnAddButtonListener {
 
     private fun setAmountWallet(){
         savingsBinding?.addAmountWalletImageView?.setOnClickListener {
-
+            savingsWalletDialog = activity?.let { it1 ->
+                SavingsWalletDialog(it1, this).apply {
+                    show()
+                }
+            }
         }
     }
 

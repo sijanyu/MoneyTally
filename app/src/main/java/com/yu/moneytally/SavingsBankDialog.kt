@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatButton
 
-class SavingsDialog(
+class SavingsBankDialog(
     context: Context,
     private val listener: OnAddButtonListener? = null
 ): AlertDialog(context) {
@@ -21,8 +21,6 @@ class SavingsDialog(
         setCanceledOnTouchOutside(false)
 
         val dialogClose: ImageView = findViewById(R.id.bankDialogCloseImageView)
-
-
         val addAmountTextBox: EditText = findViewById(R.id.bankAddAmountTextBox)
         val addAmountButton: AppCompatButton = findViewById(R.id.bankAddAmountButton)
 
@@ -36,15 +34,12 @@ class SavingsDialog(
                 dismiss()
             } else {
                 show()
-        }
-                }
             }
         }
+    }
+}
 
 
-/**
 interface OnAddButtonListener {
     fun onAddAmount(amount: String) {}
 }
-
- **/
