@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
@@ -21,13 +20,20 @@ class SavingsDialog(
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         setCanceledOnTouchOutside(false)
 
-        val dialogClose : ImageView  = findViewById(R.id.dialogCloseImageView)
-        val addAmountTextBox : TextView =  findViewById(R.id.addAmountTextBox)
-        val addAmountButton : AppCompatButton = findViewById(R.id.addAmountButton)
+        val dialogClose: ImageView = findViewById(R.id.dialogCloseImageView)
+        val addAmountTextBox: TextView = findViewById(R.id.addAmountTextBox)
+        val addAmountButton: AppCompatButton = findViewById(R.id.addAmountButton)
 
+        dialogClose.setOnClickListener {
+            dismiss()
+        }
+
+        addAmountButton.setOnClickListener {
+            listener?.onAddAmount(addAmountTextBox.text.toString())
         }
     }
+}
 
 interface OnAddButtonListener {
-    fun onAmountAdded(amount: Double)
+    fun onAddAmount(amount: String)
 }

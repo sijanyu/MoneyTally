@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#348126"
         android:letterSpacing="1.2"
         android:text="ADD"
@@ -16,11 +17,10 @@
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintTop_toBottomOf="@+id/addAmountTextBox" />
 
     <TextView
         android:id="@+id/titleAmountTextView"
@@ -41,6 +41,7 @@
         android:id="@+id/addAmountTextBox"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:background="@android:drawable/editbox_background"
         android:backgroundTint="#BFE6A3"
@@ -48,12 +49,10 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintTop_toBottomOf="@+id/dialogCloseImageView" />
 
     <ImageView
         android:id="@+id/dialogCloseImageView"
