@@ -21,6 +21,14 @@ class SavingsBankDialog(
         setCanceledOnTouchOutside(false)
 
         val dialogClose: ImageView = findViewById(R.id.bankDialogCloseImageView)
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:app/src/main/java/com/yu/moneytally/SavingsDialog.kt
+
+
+========
+>>>>>>>> 5f20ea4 (added database for Expense Fragment):app/src/main/java/com/yu/moneytally/SavingsBankDialog.kt
+>>>>>>> 5f20ea4 (added database for Expense Fragment)
         val addAmountTextBox: EditText = findViewById(R.id.bankAddAmountTextBox)
         val addAmountButton: AppCompatButton = findViewById(R.id.bankAddAmountButton)
 
@@ -34,6 +42,7 @@ class SavingsBankDialog(
                 dismiss()
             } else {
                 show()
+<<<<<<< HEAD
             }
         }
     }
@@ -43,3 +52,30 @@ class SavingsBankDialog(
 interface OnAddButtonListener {
     fun onAddAmount(amount: String) {}
 }
+=======
+<<<<<<<< HEAD:app/src/main/java/com/yu/moneytally/SavingsDialog.kt
+========
+            }
+>>>>>>>> 5f20ea4 (added database for Expense Fragment):app/src/main/java/com/yu/moneytally/SavingsBankDialog.kt
+        }
+                }
+            }
+        }
+
+
+/**
+interface OnAddButtonListener {
+    fun onAddAmount(amount: String) {}
+}
+
+<<<<<<<< HEAD:app/src/main/java/com/yu/moneytally/SavingsDialog.kt
+ **/
+========
+
+interface OnAddButtonListener {
+    fun onAddAmount(amount: String) {}
+
+    fun onAddAmountWallet(amount: String) {}
+}
+>>>>>>>> 5f20ea4 (added database for Expense Fragment):app/src/main/java/com/yu/moneytally/SavingsBankDialog.kt
+>>>>>>> 5f20ea4 (added database for Expense Fragment)

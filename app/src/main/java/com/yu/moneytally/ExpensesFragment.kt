@@ -1,10 +1,13 @@
 package com.yu.moneytally
 
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatButton
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +30,7 @@ class ExpensesFragment() : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -36,6 +40,8 @@ class ExpensesFragment() : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_expenses, container, false)
     }
+
+    var dbInstance : SQLiteDatabase = (activity as MainActivity).expensesDatabase!!
 
     companion object {
         /**

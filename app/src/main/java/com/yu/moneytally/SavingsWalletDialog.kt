@@ -12,7 +12,11 @@ import androidx.appcompat.widget.AppCompatButton
 
 class SavingsWalletDialog(
     context: Context,
+<<<<<<< HEAD
     private val listener: OnAddButtonListener? = null
+=======
+    private val listener2: OnAddButtonListener? = null
+>>>>>>> 5f20ea4 (added database for Expense Fragment)
 ): AlertDialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +35,11 @@ class SavingsWalletDialog(
 
         addAmountButton.setOnClickListener {
             if (addAmountTextBox.text.isNotEmpty()) {
+<<<<<<< HEAD
                 listener?.onAddAmount(addAmountTextBox.text.toString())
+=======
+                listener2?.onAddAmountWallet(addAmountTextBox.text.toString())
+>>>>>>> 5f20ea4 (added database for Expense Fragment)
                 dismiss()
             } else {
                 show()
@@ -39,9 +47,12 @@ class SavingsWalletDialog(
         }
     }
 }
+<<<<<<< HEAD
 
 /**
 interface OnAddButtonListener {
     fun onAddAmount(amount: String) {}
 }
  **/
+=======
+>>>>>>> 5f20ea4 (added database for Expense Fragment)

@@ -1,19 +1,22 @@
 package com.yu.moneytally
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.yu.moneytally.forExpensesDatabase.*
 import com.yu.moneytally.databinding.ActivityMainBinding
 
 
+
 class MainActivity : AppCompatActivity() {
+    var expensesDatabase : SQLiteDatabase? = null
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,8 +42,13 @@ class MainActivity : AppCompatActivity() {
         }
         navView.selectedItemId = R.id.navigation_savings
 
-       // val navigationHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        //val navController = navigationHost.navController
-       // navView.setupWithNavController(navController)
+
+        try {
+            expensesDatabase = this.openOrCreateDatabase("ExpensesDatabase", Context.MODE_PRIVATE, null)
+        }
+        catch(e: Exception)
+        {
+            e.printStackTrace()
+        }
     }
 }

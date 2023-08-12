@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import com.yu.moneytally.databinding.FragmentSavingsBinding
 
 class SavingsFragment() : Fragment(), OnAddButtonListener {
@@ -52,6 +53,29 @@ class SavingsFragment() : Fragment(), OnAddButtonListener {
     }
 
     override fun onAddAmount(amount: String) {
-        binding.bankAmountTextBox.text = amount
+        if (binding.bankAmountTextBox.text.isEmpty()) {
+            binding.bankAmountTextBox.text = amount
+        } else {
+            binding.bankAmountTextBox.text = (binding.bankAmountTextBox.text.toString().toInt() +
+                    amount.toInt()).toString()
+        }
+    }
+
+    override fun onAddAmountWallet(amount: String) {
+        if (binding.bankAmountTextBox.text.isNotEmpty() &&
+            (binding.bankAmountTextBox.text.toString().toInt() - amount.toInt() > 0)) {
+            if (binding.walletAmountTextBox.text.isEmpty()) {
+                binding.bankAmountTextBox.text =
+                    (binding.bankAmountTextBox.text.toString().toInt() - amount.toInt()).toString()
+                binding.walletAmountTextBox.text = amount
+            } else {
+                binding.bankAmountTextBox.text =
+                    (binding.bankAmountTextBox.text.toString().toInt() - amount.toInt()).toString()
+                binding.walletAmountTextBox.text =
+                    (binding.walletAmountTextBox.text.toString().toInt() + amount.toInt()).toString()
+            }
+        } else {
+            savingsWalletDialog?.dismiss()
+        }
     }
 }
