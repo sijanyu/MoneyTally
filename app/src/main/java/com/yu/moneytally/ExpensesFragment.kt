@@ -41,7 +41,7 @@ class ExpensesFragment() : Fragment() {
         return inflater.inflate(R.layout.fragment_expenses, container, false)
     }
 
-    var dbInstance : SQLiteDatabase = (activity as MainActivity).expensesDatabase!!
+//    var dbInstance : SQLiteDatabase = (activity as MainActivity).expensesDatabase!!
 
     companion object {
         /**
